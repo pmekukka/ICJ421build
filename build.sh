@@ -1,10 +1,23 @@
 #!/bin/sh
 #working directory
+RUN=$(pwd)
 touch directory
 WORKING_DIRECTORY=$(cat directory)
 if [[ $(wc -c directory) = "0 directory" ]]; then
 	echo null > directory
 	WORKING_DIRECTORY=$(cat directory)
+	while [[ $WORKING_DIRECTORY == "null" ]]; do
+	case $WORKING_DIRECTORY in
+		null)
+			echo "Please enter the whole working directory.. ${WORKING_DIRECTORY}"
+			read WORKING_DIRECTORY
+			echo ${WORKING_DIRECTORY} > directory
+			echo "Working directory is now set at ${WORKING_DIRECTORY}"
+			;;
+		*)	break
+			;;
+	esac
+	done
 else
 	while [[ $WORKING_DIRECTORY == "null" ]]; do
 	case $WORKING_DIRECTORY in
@@ -84,6 +97,7 @@ if [ "$files" != "0" ]
 	./vendor/aokp/build.sh
 
 	else
-	echo "Not a repo folder."
+	echo "Not a repo folder. Typo?"
+	cd $RUN
 	echo null > directory
 fi
