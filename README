@@ -1,7 +1,7 @@
 ICJ421build
 ===========
 
-Script to set up env. and build ICJ421 in Arch Linux.
+Script to set up env. and build ICJ421 in Arch Linux. Might work in other distros too.
 
 -Prompts for directory where you have run 'repo init' for ICJ421 repos
 -Checks if the directory exists and is a repo dir
