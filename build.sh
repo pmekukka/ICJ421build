@@ -1,8 +1,9 @@
 #!/bin/sh
 #edit working directory
+WORKING_DIRECTORY=$(cat directory)
 echo "========Entering working directory=========="
-echo "cd /home/pmekukka/das_kovalevy/ICJ421/"
-cd /home/pmekukka/das_kovalevy/ICJ421/
+echo "cd ${WORKING_DIRECTORY}"
+cd ${WORKING_DIRECTORY}
 sleep 1
 
 #syncing with remote
@@ -25,7 +26,7 @@ elif [ $WHATPYTHON == python2 ]; then
 else
         echo "Python2 nor python3 is symlnk for python"
 fi
-cd /home/pmekukka/das_kovalevy/ICJ421/
+cd $WORKING_DIRECTORY
 sleep 2
 
 #To check if 'make clean' is to be used or not
