@@ -1,10 +1,23 @@
 #!/bin/sh
 #edit working directory
 WORKING_DIRECTORY=$(cat directory)
+while [[ $WORKING_DIRECTORY == "/whole/path/to/working_directory/" ]]; do
+	case $WORKING_DIRECTORY in
+		/whole/path/to/working_directory/)
+			echo "Please enter the whole working directory.. ${WORKING_DIRECTORY}"
+			read WORKING_DIRECTORY
+			echo ${WORKING_DIRECTORY} > directory
+			echo "Working directory is now set at ${WORKING_DIRECTORY}"
+			;;
+		*)	
+			break
+			;;
+	esac
+done
+
 echo "========Entering working directory=========="
 echo "cd ${WORKING_DIRECTORY}"
-cd ${WORKING_DIRECTORY}
-sleep 1
+cd $WORKING_DIRECTORY
 
 #syncing with remote
 echo "========Syncing working directory=========="
