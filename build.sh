@@ -53,5 +53,5 @@ source /opt/sun-java6/envsetup.sh
 java -version
 sleep 2
 
-#echo Starting to build
+echo "=============Starting to build=============="
 ./vendor/aokp/build.sh
