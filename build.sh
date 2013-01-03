@@ -6,8 +6,8 @@ cd /home/pmekukka/das_kovalevy/ICJ421/
 sleep 1
 
 #syncing with remote
-#echo "========Syncing working directory=========="
-#repo sync -j16
+echo "========Syncing working directory=========="
+repo sync -j16
 
 #Android doesn't build using python3
 echo "=========Checking python version============"
@@ -54,5 +54,4 @@ java -version
 sleep 2
 
 #echo Starting to build
-#./vendor/aokp/build.sh
-echo $MAKE
+./vendor/aokp/build.sh
