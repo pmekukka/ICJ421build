@@ -1,8 +1,7 @@
 ICJ421build
 ===========
 
-Script to set up env. and build ICJ421 (https://github.com/IceColdJelly42/platform_manifest)
-in Arch Linux. Should work in other distros too except for the java part.
+Script to set up env. and build ICJ421 (https://github.com/IceColdJelly42/platform_manifest) in Arch Linux. Should work in other distros too except for the java part. XDA forum thread: http://forum.xda-developers.com/showthread.php?t=2052610
 
 -Prompts for directory where you have run 'repo init' for ICJ421 repos
 -Checks if the directory exists and is a repo dir
