@@ -80,7 +80,7 @@ if [ "$files" != "0" ]
 	sleep 2
 
 	echo "=============Starting to build=============="
-	rm ./out/target/product/endeavoru/build.prop
+	rm ./out/target/product/endeavoru/system/build.prop
 	./vendor/aokp/build.sh
 
 	else
