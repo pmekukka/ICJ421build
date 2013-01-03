@@ -23,16 +23,6 @@ echo "========Entering working directory=========="
 echo "cd ${WORKING_DIRECTORY}"
 cd $WORKING_DIRECTORY
 
-if [[ pwd == "${WORKING_DIRECTORY}" ]]; 
-	then
-	sudo cp ${WORKING_DIRECTORY}.repo/repo/repo /usr/bin/repo
-
-#elif [[ $(ls ${WORKING_DIRECTORY}.repo/repo/repo) == "ls: cannot access ${WORKING_DIRECTORY}.repo/repo/repo: No such file or directory" ]]; 
-#	then
-#	echo null > directory
-else echo
-fi
-		
 #syncing with remote
 echo "========Syncing working directory=========="
 repo sync -j16
