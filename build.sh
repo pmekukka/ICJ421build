@@ -1,24 +1,38 @@
 #!/bin/sh
 #edit working directory
+touch directory
 WORKING_DIRECTORY=$(cat directory)
-while [[ $WORKING_DIRECTORY == "/whole/path/to/working_directory/" ]]; do
+if [[ $(wc -c directory) = 0 ]]; then
+	echo null > directory
+else 
+	while [[ $WORKING_DIRECTORY == "null" ]]; do
 	case $WORKING_DIRECTORY in
-		/whole/path/to/working_directory/)
+		null)
 			echo "Please enter the whole working directory.. ${WORKING_DIRECTORY}"
 			read WORKING_DIRECTORY
 			echo ${WORKING_DIRECTORY} > directory
 			echo "Working directory is now set at ${WORKING_DIRECTORY}"
 			;;
-		*)	
-			break
+		*)	break
 			;;
 	esac
-done
+	done
+fi
 
 echo "========Entering working directory=========="
 echo "cd ${WORKING_DIRECTORY}"
 cd $WORKING_DIRECTORY
 
+if [[ pwd == "${WORKING_DIRECTORY}" ]]; 
+	then
+	sudo cp ${WORKING_DIRECTORY}.repo/repo/repo /usr/bin/repo
+
+#elif [[ $(ls ${WORKING_DIRECTORY}.repo/repo/repo) == "ls: cannot access ${WORKING_DIRECTORY}.repo/repo/repo: No such file or directory" ]]; 
+#	then
+#	echo null > directory
+else echo
+fi
+		
 #syncing with remote
 echo "========Syncing working directory=========="
 repo sync -j16
@@ -43,6 +57,7 @@ cd $WORKING_DIRECTORY
 sleep 2
 
 #To check if 'make clean' is to be used or not
+echo
 echo "=========== make clean? ===================="
 MAKE=nothing
 echo "Please type 'yes' or 'no'."
