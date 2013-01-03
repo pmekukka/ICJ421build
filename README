@@ -1,0 +1,12 @@
+ICJ421build
+===========
+
+Script to set up env. and build ICJ421
+
+-Prompts for directory where you have run 'repo init' for ICJ421 repos
+-Checks if the directory exists and is a repo dir
+-Syncs with ICJ421 repos
+-Asks if you want to 'make clean'
+-Sources java6
+-Checks that python2 is symlinked and not python3 and changes it if needed
+-Starts to build
