@@ -47,22 +47,22 @@ if [ "$files" != "0" ]
 	echo "========Syncing working directory=========="
 	repo sync -j16
 	#Android doesn't build using python3
-	echo "=========Checking python version============"
-	WHATPYTHON=$(ls -l /usr/bin/python | cut -d ">" -f2)
+	#echo "=========Checking python version============"
+	#WHATPYTHON=$(ls -l /usr/bin/python | cut -d ">" -f2)
 
-	if [ $WHATPYTHON == python3 ]; then
-        echo "Changing python symlnk"
-        cd /usr/bin/
-        sudo rm python
-        sudo ln -s python2 python
-        echo "Python2 symlnk for python created"
-        echo "Ready to build for android"
-	elif [ $WHATPYTHON == python2 ]; then
-        echo "Python is ready to build android"
-	else
-        echo "Python2 nor python3 is symlnk for python"
-	fi
-	cd $WORKING_DIRECTORY
+	#if [ $WHATPYTHON == python3 ]; then
+    #    echo "Changing python symlnk"
+    #    cd /usr/bin/
+    #    sudo rm python
+    #    sudo ln -s python2 python
+    #    echo "Python2 symlnk for python created"
+    #    echo "Ready to build for android"
+	#elif [ $WHATPYTHON == python2 ]; then
+    #    echo "Python is ready to build android"
+	#else
+    #    echo "Python2 nor python3 is symlnk for python"
+	#fi
+	#cd $WORKING_DIRECTORY
 	sleep 2
 
 	#To check if 'make clean' is to be used or not
